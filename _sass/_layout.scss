@@ -96,7 +96,8 @@
 .active {
   .content {
     opacity: 1;
-    transition: opacity .2s ease .15s;
+    visibility: visible;
+    transition: visibility 0s, opacity .2s ease .15s;
   }
 
   .nav {
@@ -106,6 +107,7 @@
 
 .content {
   opacity: 0;
+  visibility: hidden;
 }
 
 .nav {

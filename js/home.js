@@ -3,7 +3,7 @@ $(function () {
   var experiments = $(".experiments");
 
   var arr = $(".section").each(function (i, el) {
-    $(this).find(".nav").on("click", function () {
+    $(this).on("click", function () {
       arr.removeClass("active");
       $(el).addClass("active");
       if (penguin.hasClass("active")) {
