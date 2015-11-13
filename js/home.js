@@ -1,24 +1,17 @@
 $(function () {
+  var penguin = $(".penguin");
+  var experiments = $(".experiments");
 
-    var crooked = $('.crooked'),
-        presidential = $('.presidential'),
-        birthday = $('.birthday'),
-        shotrandomizer = $('.shotrandomizer'),
-        close = $('.close');
-
-    close.on('click', function () {
-      $(this).parent('.show').removeClass('show').addClass('hide');
-      setTimeout(function() {
-        crooked.removeClass('back');
-      }, 500);
-    });
-
-    $('#project-list li').on('click', function () {
-      console.log($(this).attr('id'));
-      var id = $(this).attr('id');
-      crooked.addClass('back');
-      setTimeout(function() {
-        var el = $('.' + id).removeClass('hide').addClass('show');
-      }, 500);
+  var arr = $(".section").each(function (i, el) {
+    $(this).find(".nav").on("click", function () {
+      arr.removeClass("active");
+      $(el).addClass("active");
+      if (penguin.hasClass("active")) {
+        console.log("is penguin");
+        experiments.css("width", "19%");
+      } else {
+        experiments.css("width", "");
+      }
     });
   });
+});

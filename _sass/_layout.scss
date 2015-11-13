@@ -1,68 +1,123 @@
-.main {
+.main-container {
+  background-color: $orange;
   height: 100%;
-}
-
-.project {
-  height: 100%;
-  position: absolute;
-  top: 0;
   width: 100%;
-
-  transition: all .5s cubic-bezier(.13,.95,.58,1);
 }
 
-.crooked {
-  background-color: $base;
-  background-image: radial-gradient(circle, lighten($base, 10%), $base);
-}
-
-.presidential {
-  background-color: $accent;
-  background-image: radial-gradient(circle, lighten($accent, 10%), $accent);
-}
-.birthday {
-  background-color: $base-light;
-  background-image: radial-gradient(circle, lighten($base-light, 10%), $base-light);
-}
-
-.shotrandomizer {
-  background-color: $comp;
-  background-image: radial-gradient(circle, lighten($comp, 10%), $comp);
-}
-
-.hide {
-  transform: translateX(100%);
-}
-
-.back {
-  transform: scale(.95);
-}
-
-.show {
-  transform: translateX(0);
-}
-
-.close {
-  color: #fff;
-  cursor: pointer;
-  font-size: 3rem;
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  z-index: 100;
-}
-
-.project-heading {
-  color: #fff;
-  font-family: $heading-font-family;
-  font-size: 20rem;
-  font-weight: 300;
-  margin: 0;
-  padding-top: 0;
-  line-height: 1em;
-  position: relative;
+.experiments {
+  color: $black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  text-shadow: $text-shadow;
-  text-transform: uppercase;
-  // transform: translateY(-65px);
+
+  a {
+    color: $black;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .experiments-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+
+    li {
+      margin-bottom: 25px;
+    }
+  }
+
+  .main-header {
+    font-size: 7.2rem;
+    font-weight: 300;
+    margin-bottom: 200px;
+  }
+
+  @include susy-breakpoint($desktop) {
+    float: left;
+    height: 100%;
+    width: 13%;
+  }
+}
+
+.story {
+  background-color: $grey;
+
+  @include susy-breakpoint($desktop) {
+    float: left;
+    height: 100%;
+    width: 13%;
+  }
+}
+
+.connect {
+  background-color: $blue;
+
+  @include susy-breakpoint($desktop) {
+    float: left;
+    height: 100%;
+    width: 13%;
+  }
+}
+
+.penguin {
+  background-color: $black;
+
+  .nav {
+    color: $grey;
+  }
+
+  &.active ~ .main {
+    width: 19%;
+  }
+
+  @include susy-breakpoint($desktop) {
+    float: right;
+    height: 100%;
+    width: 19%;
+  }
+}
+
+.active {
+  width: 55%;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  font-size: 2.4rem;
+  padding: 0 40px;
+  position: relative;
+  transition: all .2s ease;
+}
+
+.active {
+  .content {
+    opacity: 1;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+.content {
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.nav {
+  color: $black;
+  cursor: pointer;
+  bottom: 30px;
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  left: 0;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  text-align: center;
 }

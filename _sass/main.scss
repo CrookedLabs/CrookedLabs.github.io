@@ -1,0 +1,43 @@
+// Removed the front matter here that jacked the gulp process
+@charset "utf-8";
+
+$rem-percentage:  percentage(10 / 16);
+
+$drop-shadow: 0 .3rem .4rem rgba(0,0,0,.3);
+$text-shadow: 0 .1rem .1rem rgba(0,0,0,.1);
+$base-font-family: 'Source Sans Pro', sans-serif;
+$monospace: 'Courier New', Courier, monospace;
+$base-font-size:   1.6rem;
+$small-font-size:  $base-font-size * 0.875;
+$base-font-weight: 400;
+$base-line-height: 1.4;
+
+$font-black:       #222;
+
+$orange: #FF5335;
+$grey: #DFE0D4;
+$blue: #3E92A3;
+$black: #353940;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$spacing-unit: 30px;
+
+$mobile: 500px;
+$tablet: 769px;
+$desktop: 1025px;
+$xl: 1224px;
+
+$susy: (
+        columns: 12,
+        global-box-sizing: border-box,
+);
+
+// Imports
+@import "normalize";
+@import "../node_modules/susy/sass/_susy.scss";
+@import "base";
+@import "syntax-highlighting";
+@import "layout";
