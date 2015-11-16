@@ -69,14 +69,15 @@
     color: $grey;
   }
 
-  &.active ~ .main {
-    width: 19%;
-  }
 
   @include susy-breakpoint($desktop) {
     float: right;
     height: 100%;
     width: 19%;
+    
+    &.active ~ .main {
+      width: 19%;
+    }
   }
 }
 
