@@ -15,7 +15,6 @@ $(function () {
         arr.removeClass("active");
         $(el).addClass("active");
         if (penguin.hasClass("active")) {
-          console.log("is penguin");
           experiments.css("width", "19%");
         } else {
           experiments.css("width", "");

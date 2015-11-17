@@ -1,7 +1,10 @@
 .main-container {
   background-color: $orange;
-  height: 100%;
   width: 100%;
+
+  @include susy-breakpoint($tablet) {
+    height: 100%;
+  }
 }
 
 .experiments {
@@ -13,9 +16,19 @@
 
   a {
     color: $black;
-    font-size: 3rem;
+    border: 1px solid $black;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 2rem;
     font-weight: 700;
+    padding: 8px 20px;
     text-transform: uppercase;
+
+    @include susy-breakpoint($tablet) {
+      font-size: 3rem;
+      border: none;
+      padding: 0;
+    }
   }
 
   .experiments-list {
@@ -30,22 +43,41 @@
   }
 
   .main-header {
-    font-size: 7.2rem;
+    font-size: 3.6rem;
     font-weight: 300;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+
+    @include susy-breakpoint($mobile) {
+      font-size: 5rem;
+      margin-bottom: 100px;
+    }
+
+    @include susy-breakpoint($tablet) {
+      font-size: 7.2rem;
+      margin-bottom: 100px;
+    }
   }
 
-  @include susy-breakpoint($desktop) {
+  .nav {
+    display: none;
+  }
+
+  @include susy-breakpoint($tablet) {
     float: left;
     height: 100%;
     width: 13%;
+
+    .nav {
+      display: block;
+    }
   }
+
 }
 
 .story {
   background-color: $grey;
 
-  @include susy-breakpoint($desktop) {
+  @include susy-breakpoint($tablet) {
     float: left;
     height: 100%;
     width: 13%;
@@ -55,7 +87,12 @@
 .connect {
   background-color: $blue;
 
-  @include susy-breakpoint($desktop) {
+  .content {
+    text-align: center;
+  }
+
+  @include susy-breakpoint($tablet) {
+    text-align: left;
     float: left;
     height: 100%;
     width: 13%;
@@ -65,16 +102,21 @@
 .penguin {
   background-color: $black;
 
+  .content {
+    text-align: center;
+  }
+
   .nav {
     color: $grey;
   }
 
 
-  @include susy-breakpoint($desktop) {
+  @include susy-breakpoint($tablet) {
     float: right;
     height: 100%;
+    text-align: center;
     width: 19%;
-    
+
     &.active ~ .main {
       width: 19%;
     }
@@ -82,45 +124,66 @@
 }
 
 .active {
-  width: 55%;
+
+  @include susy-breakpoint($tablet) {
+    width: 55%;
+  }
 }
 
 .section {
-  align-items: center;
-  display: flex;
   font-size: 2.4rem;
-  padding: 0 40px;
-  position: relative;
+  padding: 20px 40px 40px;
   transition: all .15s ease;
+
+  @include susy-breakpoint($tablet) {
+    align-items: center;
+    display: flex;
+    padding: 0 6%;
+    position: relative;
+  }
 }
 
 .active {
   .content {
-    opacity: 1;
-    visibility: visible;
-    transition: visibility 0s, opacity .2s ease .15s;
+
+    @include susy-breakpoint($tablet) {
+      opacity: 1;
+      visibility: visible;
+      transition: visibility 0s, opacity .2s ease .15s;
+    }
   }
 
-  .nav {
-    display: none;
+  @include susy-breakpoint($tablet) {
+    .nav {
+      display: none;
+    }
   }
 }
 
 .content {
-  opacity: 0;
-  visibility: hidden;
+
+  @include susy-breakpoint($tablet) {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .nav {
   color: $black;
-  cursor: pointer;
-  bottom: 30px;
   display: block;
-  font-size: 2rem;
-  font-weight: 600;
-  left: 0;
-  position: absolute;
-  margin: auto;
-  right: 0;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 40px;
   text-align: center;
+
+  @include susy-breakpoint($tablet) {
+    cursor: pointer;
+    bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    left: 0;
+    position: absolute;
+    margin: auto;
+    right: 0;
+  }
 }
