@@ -160,6 +160,7 @@
 }
 
 .content {
+  
   @include susy-breakpoint($tablet) {
     opacity: 0;
     visibility: hidden;
