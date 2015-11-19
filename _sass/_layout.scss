@@ -110,7 +110,6 @@
     color: $grey;
   }
 
-
   @include susy-breakpoint($tablet) {
     float: right;
     height: 100%;
