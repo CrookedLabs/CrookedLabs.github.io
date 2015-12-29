@@ -65,7 +65,7 @@
   @include susy-breakpoint($tablet) {
     float: left;
     height: 100%;
-    width: 13%;
+    width: 13.33333%;
 
     .nav {
       display: block;
@@ -80,7 +80,7 @@
   @include susy-breakpoint($tablet) {
     float: left;
     height: 100%;
-    width: 13%;
+    width: 13.33333%;
   }
 }
 
@@ -95,7 +95,7 @@
     text-align: left;
     float: left;
     height: 100%;
-    width: 13%;
+    width: 13.33333%;
   }
 }
 
@@ -114,10 +114,10 @@
     float: right;
     height: 100%;
     text-align: center;
-    width: 19%;
+    width: 18.33333%;
 
     &.active ~ .main {
-      width: 19%;
+      width: 18.33333%;
     }
   }
 }
@@ -160,7 +160,7 @@
 }
 
 .content {
-  
+
   @include susy-breakpoint($tablet) {
     opacity: 0;
     visibility: hidden;

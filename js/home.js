@@ -15,7 +15,7 @@ $(function () {
         arr.removeClass("active");
         $(el).addClass("active");
         if (penguin.hasClass("active")) {
-          experiments.css("width", "19%");
+          experiments.css("width", "18.33333%");
         } else {
           experiments.css("width", "");
         }
