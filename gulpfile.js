@@ -3,19 +3,13 @@ var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var cp = require('child_process');
-var htmlMin = require('gulp-minify-html');
 var jsMin = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
-
-var messages = {
-  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
 
 /**
 * Build the Jekyll Site
 */
 gulp.task('jekyll-build', function (done) {
-  browserSync.notify(messages.jekyllBuild);
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 });
@@ -39,17 +33,16 @@ gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
 });
 
 /**
-* Compile files from js into both _site/css (for live injecting) and site (for future jekyll builds)
+* Compile files from js into _site/css (for live injecting)
 */
 gulp.task('js', function () {
   return gulp.src('js/*.js')
     .pipe(gulp.dest('_site/js'))
-    .pipe(browserSync.reload({stream: true}))
-    .pipe(gulp.dest('js'));
+    .pipe(browserSync.reload({stream: true}));
 });
 
 /**
-* Compile files from _sass into both _site/css (for live injecting) and site (for future jekyll builds)
+* Compile files from _sass into _site/css (for live injecting)
 */
 gulp.task('sass', function () {
   return gulp.src('_sass/main.scss')
@@ -60,8 +53,19 @@ gulp.task('sass', function () {
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('_site/css'))
-    .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest('css'));
+    .pipe(browserSync.reload({stream:true}));
+});
+
+/**
+ * Compress assets
+ */
+gulp.task('assets', function () {
+  return gulp.src('assets/**/*')
+    .pipe(imagemin({
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest('_site/assets'));
 });
 
 /**

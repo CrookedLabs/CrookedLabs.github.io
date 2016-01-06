@@ -17,3 +17,5 @@ exclude: ["node_modules", "gulpfile.js", "package.json"]
 
 # Build settings
 markdown: kramdown
+exclude: ["assets", "css", "_sass", "js"]
+keep_files: ["assets", "css", "js"]
