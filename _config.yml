@@ -11,11 +11,6 @@ email: hello@crookedlabs.co
 description: Crooked Labs was built to experiment with ideas and see if they have any value in the real world.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://crookedlabs.co" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-# github_username:  jekyll
-exclude: ["node_modules", "gulpfile.js", "package.json"]
 
 # Build settings
 markdown: kramdown
-exclude: ["assets", "css", "_sass", "js"]
-keep_files: ["assets", "css", "js"]
